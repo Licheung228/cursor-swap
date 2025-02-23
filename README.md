@@ -1,51 +1,54 @@
 # cursor-swap
 
-[英文](./) | [中文](./zh-cn.md)
+[English](https://github.com/Licheung228/cursor-swap/blob/main/en.md) | [Chinese](./)
 
-swap cursor img-set
-use a throttle to handle image set. switch image with delay. you can use it to create a dynamic cursor.
+交换光标图像集  
+使用节流机制处理图像集。延迟切换图像，可以用来创建动态光标。
 
-## install
+## 安装
 
 ```sh
 npm add cursor-swap
 ```
 
-## usage
+## 使用方法
 
 ```js
 import cursorSwap from 'cursor-swap'
 cursorSwap(target, imgArr[, options])
 ```
 
-`target`: target element
-\<HTMLElement>
-the cursor target element
-`imgArr`
-\<Array>
-cursor img-set array, a image array, such as:
+`target`: 目标元素  
+\<HTMLElement>  
+光标目标元素  
+`imgArr`  
+\<Array>  
+光标图像集数组，例如：
+
 ```js
 const imgCut = [d0, d1, d2, d3]
 ```
-`options`:
-\<Object>
-- `delay`: delay time(ms)
-  \<number>
-  default `100`
-- `position`: cursor position
-  \<Object>
-  default `{ x: 0, y: 0 }`
-- `fallback`: fallback cursor
-  \<string>
-  default `default`
-- `self`: only apply on target
-  \<boolean>
-  default `false`
-- `throttle`: a throttle function
-  \<function>
-  a throttle function, I provide a simple version. you can custom it, for example `lodash.throttle`
 
-## example
+`options`:  
+\<Object>
+
+- `delay`: 延迟时间（毫秒）  
+  \<number>  
+  默认 `100`
+- `position`: 光标位置  
+  \<Object>  
+  默认 `{ x: 0, y: 0 }`
+- `fallback`: 备用光标  
+  \<string>  
+  默认 `default`
+- `self`: 仅应用于目标元素  
+  \<boolean>  
+  默认 `false`
+- `throttle`: 节流函数  
+  \<function>  
+  节流函数，我提供了一个简单版本。你可以自定义，例如 `lodash.throttle`
+
+## 示例
 
 ```ts
 import cursorSwap from 'cursor-swap'
@@ -62,7 +65,7 @@ button.onclick = () => {
 }
 
 window.document.addEventListener('DOMContentLoaded', () => {
-  // here use vite
+  // 这里使用了 Vite
   const imgCut = [d0, d1, d2, d3]
 
   cursorSwap(window.document.documentElement, imgCut, {
@@ -73,8 +76,8 @@ window.document.addEventListener('DOMContentLoaded', () => {
 })
 ```
 
-now move your mouse, you will see the cursor be a dude! Because `options.slef` is enable, when cursor move to button, it will be default.
+现在移动你的鼠标，你会看到光标变成了一个小人！由于开启了 `options.self`，当你将光标移动到 `button` 的时候变为了默认。
 
-## license
+## 许可证
 
 MIT
