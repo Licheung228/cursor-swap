@@ -65,7 +65,7 @@ button.onclick = () => {
 }
 
 window.document.addEventListener('DOMContentLoaded', () => {
-  // 这里使用了 Vite
+  // 这里使用了 Vite 作为工程化工具，请注意确保您的工程化设置能访问到这些图片
   const imgCut = [d0, d1, d2, d3]
 
   cursorSwap(window.document.documentElement, imgCut, {
@@ -76,7 +76,7 @@ window.document.addEventListener('DOMContentLoaded', () => {
 })
 ```
 
-现在移动你的鼠标，你会看到光标变成了一个小人！由于开启了 `options.self`，当你将光标移动到 `button` 的时候变为了默认。
+现在移动你的鼠标，你会看到光标变成了一个奔跑的小人！由于开启了 `options.self`，当你将光标移动到 `button` 的时候变为了默认。
 
 ## 许可证
 
